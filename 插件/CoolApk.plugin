@@ -1,0 +1,19 @@
+#!name=酷安去广告
+#!desc=过滤酷安广告
+#!openUrl=https://apps.apple.com/app/id1422581869
+#!author=
+#!homepage=
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/CoolApk.png
+#!date=2025-3-15
+
+[Rewrite]
+#酷安热搜
+^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
+#酷安开屏广告
+^https:\/\/api\.coolapk\.com\/v6\/?:feed\/detail response-body-json-jq '.data.hotReplyRows |= (select(. != null) | map(select(.id))) | .data.topReplyRows |= (select(. != null) | map(select(.id))) | .data.detailSponsorCard = [] | .data.include_goods = [] | .data.include_goods_ids = []'
+#酷安主页净化
+^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8 response-body-json-jq '.data |= map(select(.entityTemplate != "sponsorCard" and .entityId != 32557 and .entityId != 29519 and .entityId != 29349))'
+#酷安评论区推广
+^https:\/\/api\.coolapk\.com\/v6\/feed\/detail response-body-json-jq '.data |= map(select(.entityId != 39959))'
+[Mitm]
+hostname = *.coolapk.com
