@@ -1,9 +1,13 @@
 #!name=酷安去广告
-#!desc=过滤酷安广告魔改自 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!desc=过滤酷安广告魔改自可莉🅥
 #!openUrl=https://apps.apple.com/app/id1422581869
-#!author=
-#!homepage=
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/CoolApk.png
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CoolApk.png
 #!date=2025-3-15
 
 [Rewrite]
